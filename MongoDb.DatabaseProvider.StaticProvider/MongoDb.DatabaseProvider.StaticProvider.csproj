@@ -21,8 +21,12 @@
 		<PackageReference Include="MongoDB.Driver" Version="2.16.1" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <ProjectReference Include="..\MongoDb.DatabaseProvider.Abstraction\MongoDb.DatabaseProvider.Abstraction.csproj" />
+	<ItemGroup Condition="'$(Configuration)' == 'Release'">
+		<PackageReference Include="MongoDb.DatabaseProvider.Abstraction" Version="1.0.0" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(Configuration)' == 'Debug'">
+		<ProjectReference Include="..\MongoDb.DatabaseProvider.Abstraction\MongoDb.DatabaseProvider.Abstraction.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
