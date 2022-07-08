@@ -333,7 +333,7 @@ public static class ServiceRegistrationExtension
 {{
     public static IServiceCollection AddMongoDbProvider(this IServiceCollection services, string connectionString, string database)
     {{
-        services.AddTransient<IMongoDbContext>((serviceCollection) =>
+        services.AddTransient<MongoDbContext>((serviceCollection) =>
         {{
             var dbContext = new MongoDbContext(connectionString, database);
             return dbContext;
@@ -344,7 +344,7 @@ public static class ServiceRegistrationExtension
 
     public static IServiceCollection AddMongoDbProvider(this IServiceCollection services, string database)
     {{
-        services.AddTransient<IMongoDbContext>((serviceCollection) =>
+        services.AddTransient<MongoDbContext>((serviceCollection) =>
         {{
             var dbContext = new MongoDbContext(database);
             return dbContext;
@@ -355,7 +355,7 @@ public static class ServiceRegistrationExtension
 
     public static IServiceCollection AddMongoDbProvider(this IServiceCollection services, MongoClientSettings settings, string database)
     {{
-        services.AddTransient<IMongoDbContext>((serviceCollection) =>
+        services.AddTransient<MongoDbContext>((serviceCollection) =>
         {{
             var dbContext = new MongoDbContext(settings, database);
             return dbContext;
@@ -366,7 +366,7 @@ public static class ServiceRegistrationExtension
 
     public static IServiceCollection AddMongoDbProvider(this IServiceCollection services, MongoUrl url, string database)
     {{
-        services.AddTransient<IMongoDbContext>((serviceCollection) =>
+        services.AddTransient<MongoDbContext>((serviceCollection) =>
         {{
             var dbContext = new MongoDbContext(url, database);
             return dbContext;
