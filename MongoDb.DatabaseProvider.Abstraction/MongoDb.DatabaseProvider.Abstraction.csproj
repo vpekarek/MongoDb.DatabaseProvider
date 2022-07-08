@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<LangVersion>latest</LangVersion>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>mongo;mongodb;database;provider</PackageTags>
+		<PackageProjectUrl>https://github.com/vpekarek/MongoDb.DatabaseProvider</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/vpekarek/MongoDb.DatabaseProvider</RepositoryUrl>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MongoDB.Driver" Version="2.16.1" />
+	</ItemGroup>
+
+</Project>
