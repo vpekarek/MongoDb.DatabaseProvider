@@ -10,10 +10,21 @@
 		<PackageTags>mongo;mongodb;database;provider</PackageTags>
 		<PackageProjectUrl>https://github.com/vpekarek/MongoDb.DatabaseProvider</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/vpekarek/MongoDb.DatabaseProvider</RepositoryUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Copyright>EVOLUTIT s.r.o., Václav Pekárek</Copyright>
+		<Description>Abstractions for MongoDb.DatabaseProvider packages.</Description>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="MongoDB.Driver" Version="2.16.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 
 </Project>

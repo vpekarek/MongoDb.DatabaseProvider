@@ -10,6 +10,9 @@
 		<PackageTags>mongo;mongodb;database;provider</PackageTags>
 		<PackageProjectUrl>https://github.com/vpekarek/MongoDb.DatabaseProvider</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/vpekarek/MongoDb.DatabaseProvider</RepositoryUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Copyright>EVOLUTIT s.r.o., Václav Pekárek</Copyright>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<Description>Database provider for using MongoDB in C# projects. Use with MongoDb.DatabaseProvider.StaticProvider for static MongoDbContext or MongoDb.DatabaseProvider.Generators for generated context.</Description>
 	</PropertyGroup>
 
@@ -20,5 +23,12 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\MongoDb.DatabaseProvider.Abstraction\MongoDb.DatabaseProvider.Abstraction.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 </Project>
