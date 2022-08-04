@@ -22,8 +22,8 @@ public class DbContextCollectionGenerator : ISourceGenerator
 
         if (csr.Collections.Count == 0)
         {
-            GenerateContext(context, list);
-            GenerateServiceRegistration(context);
+            //GenerateContext(context, list);
+            //GenerateServiceRegistration(context);
             return;
         }
 
