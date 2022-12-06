@@ -48,14 +48,28 @@ public class DbContextCollectionGenerator : ISourceGenerator
     private string ModifyName(string originName)
     {
         var l = originName.Length;
+
         if (originName.EndsWith("Entity"))
         {
-            return originName.Substring(0, l - 6);
+            originName = originName.Substring(0, l - 6);
+        }
+        else if (originName.EndsWith("Model"))
+        {
+            originName = originName.Substring(0, l - 5);
+        }
+        else if (originName.EndsWith("Collection"))
+        {
+            originName = originName.Substring(0, l - 10);
         }
 
-        if (originName.EndsWith("Model"))
+        l = originName.Length;
+        if (originName.EndsWith("y"))
         {
-            return originName.Substring(0, l - 5);
+            originName = originName.Substring(0, l - 1) + "ies";
+        }
+        else
+        {
+            originName = originName + "s";
         }
 
         return originName;
