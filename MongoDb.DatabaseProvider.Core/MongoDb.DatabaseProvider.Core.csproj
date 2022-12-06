@@ -13,6 +13,7 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<Copyright>EVOLUTIT s.r.o., Václav Pekárek</Copyright>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageVersion>1.0.7</PackageVersion>
 		<Description>Database provider for using MongoDB in C# projects. Use with MongoDb.DatabaseProvider.StaticProvider for static MongoDbContext or MongoDb.DatabaseProvider.Generators for generated context.</Description>
 	</PropertyGroup>
 

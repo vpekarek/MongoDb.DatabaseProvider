@@ -14,6 +14,7 @@
 		<Copyright>EVOLUTIT s.r.o., Václav Pekárek</Copyright>
 		<Description>Abstractions for MongoDb.DatabaseProvider packages.</Description>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageVersion>1.0.7</PackageVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
