@@ -40,7 +40,7 @@ public class DbContextCollectionGenerator : ISourceGenerator
             {
                 var firstArg = selectedAttributeSyntaxes.ArgumentList.GetAttributeProperty<string>("Type");
 
-                if (firstArg != null)
+                if (firstArg != null && string.IsNullOrWhiteSpace(firstArg))
                 {
                     dataType = firstArg;
                 }
@@ -193,7 +193,7 @@ public class DbContextCollectionGenerator : ISourceGenerator
 
         foreach (var data in list)
         {
-            sb.AppendLine($"\t\t{data.Name} = new MongoDbContextCollection<{data.Namespace}.{data.ClassName}>(_db.GetCollection<{data.Namespace}.{data.ClassName}>(\"{data.Name}s\"));");
+            sb.AppendLine($"\t\t{data.Name} = new MongoDbContextCollection<{data.Namespace}.{data.ClassName}>(_db.GetCollection<{data.Namespace}.{data.ClassName}>(\"{data.Name}\"));");
         }
 
         sb.AppendLine("\t}").AppendLine();
@@ -311,7 +311,7 @@ public static partial class MongoDbContext{name}sCollectionExtensions
 
     public static ReplaceOneResult? UpsertRecord(this MongoDbContextCollection<{fullName}> collection, {dataType} id, {fullName} record, ReplaceOptions? replaceOptions = null)
     {{
-        var filter = new BsonDocument(""_id"", {(dataType == "Guid" ? "var binData = new BsonBinaryData(id, GuidRepresentation.Standard);" : "id")});
+        var filter = new BsonDocument(""_id"", {(dataType == "Guid" ? "new BsonBinaryData(id, GuidRepresentation.Standard)" : "id")});
         return collection.UpsertRecord(filter, record, replaceOptions);
     }}
     public static ReplaceOneResult? UpsertRecord(this MongoDbContextCollection<{fullName}> collection, FilterDefinition<{fullName}> filter, {fullName} record, ReplaceOptions? replaceOptions = null)
@@ -323,7 +323,7 @@ public static partial class MongoDbContext{name}sCollectionExtensions
 
     public static Task<ReplaceOneResult?> UpsertRecordAsync(this MongoDbContextCollection<{fullName}> collection, {dataType} id, {fullName} record, ReplaceOptions? replaceOptions = null, CancellationToken cancellationToken = default)
     {{
-        var filter = new BsonDocument(""_id"", {(dataType == "Guid" ? "var binData = new BsonBinaryData(id, GuidRepresentation.Standard);" : "id")});
+        var filter = new BsonDocument(""_id"", {(dataType == "Guid" ? "new BsonBinaryData(id, GuidRepresentation.Standard)" : "id")});
         return collection.UpsertRecordAsync(filter, record, replaceOptions, cancellationToken);
     }}
     public static Task<ReplaceOneResult?> UpsertRecordAsync(this MongoDbContextCollection<{fullName}> collection, FilterDefinition<{fullName}> filter, {fullName} record, ReplaceOptions? replaceOptions = null, CancellationToken cancellationToken = default)
